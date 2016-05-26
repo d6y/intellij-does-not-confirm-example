@@ -9,7 +9,7 @@ class Example {
   val success: Future[String Xor Int] = Future.successful(Xor.Right(1))
 
   val transformer: XorT[Future, String, Int] = for {
-    a <- XorT[Future, String, Int] { success }
+    a <- XorT { success }
   } yield a
 
 }
